@@ -18,3 +18,10 @@ stages:
   - job: TestTwo 
     steps:  
     - script: echo "CustomDomain - $(CustomDomain)"
+
+- stage: Stage2
+  displayName: Stage2
+  jobs:
+  - job: TestTwo 
+    steps:  
+    - script: echo "CustomDomain - $(CustomDomain)"
