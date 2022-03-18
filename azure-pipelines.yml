@@ -25,3 +25,8 @@ stages:
   - job: TestTwo 
     steps:  
     - script: echo "CustomDomain - $(CustomDomain)"
+
+- stage: Stage5
+  displayName: Stage5
+  jobs:  
+  - template: test-template3.yml
