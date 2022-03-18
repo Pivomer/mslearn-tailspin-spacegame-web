@@ -1,4 +1,3 @@
-pr: none
 
 name: $(VERSION)
 
@@ -12,8 +11,6 @@ variables:
 stages:
 - stage: Stage1
   displayName: Stage1
-  variables:
-  - group: 'vars-qa'
   jobs:  
   - job: TestOne  
     steps:  
