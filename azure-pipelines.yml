@@ -1,13 +1,23 @@
+pr: none
 
-trigger:
-- main
+name: $(VERSION)
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 variables:
-  buildConfiguration: 'Release'
+- name: DOCKER_REGISTRY_CONNECTOR
+  value: acr
 
-steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+stages:
+- stage: Stage1
+  displayName: Stage1
+  variables:
+  - group: 'vars-qa'
+  jobs:  
+  - job: TestOne  
+    steps:  
+    - script:  echo "DOCKER_REGISTRY_CONNECTOR - $(DOCKER_REGISTRY_CONNECTOR)"
+  - job: TestTwo 
+    steps:  
+    - script: echo "CustomDomain - $(CustomDomain)"
