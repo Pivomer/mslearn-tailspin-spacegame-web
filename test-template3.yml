@@ -1,0 +1,7 @@
+  jobs:
+  - job: Template3
+    variables:
+    - template: test-vars.yml
+    steps:  
+    - script: echo "CustomDomain - $(CUSTOM_DOMAIN)"
+    - script: echo "CustomDomain - $(CUSTOM_DOMAIN_1)"
